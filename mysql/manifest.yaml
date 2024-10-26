@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: mysql
+  namespace: expense # if namespace was not provided it will take the default namespace.
+  labels: # these are the replicaset lables.
+     tier: mysql
+     app: bd
+     project: expense
+spec:
+  replicas: 1
+  selector: 
+  matchLabels:
+      tier: mysql
+      app: bd
+      project: expense
+  template: 
+    metadata:
+      labels:
+        tier: mysql
+        app: bd
+        project: expense
+    spec:
+      containers:
+      - name: mysql
+        image: raidi/mysql:v1
+---
+apiVersion : v1
+kind: Service
+metadata:
+  name: mysql
+  namespace: expese
+spec:
+  selector:
+    tier: mysql
+    app: bd
+    project: expense
+  ports:
+   - name: mysql-port
+     protocol: TCP
+     port: 3306 # service port
+     targetPort: 3306 #container port
+
+
+#ctl get pods -n expense ---> (if -n is not given it will take defacult namespace)
