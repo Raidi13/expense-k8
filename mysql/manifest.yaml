@@ -1,8 +1,8 @@
 apiVersion: apps/v1
-kind: deployment
+kind: Deployment
 metadata:
   name: mysql
-  namespace: expense # if namespace was not provided it will take the default namespace.
+  Namespace: expense # if namespace was not provided it will take the default namespace.
   labels: # these are the replicaset lables.
      tier: mysql
      app: bd
