@@ -4,21 +4,21 @@ metadata:
   name: mysql
   namespace: expense # if namespace was not provided it will take the default namespace.
   labels: # these are the replicaset lables.
-     tier: mysql
      app: bd
+     tier: mysql
      project: expense
 spec:
   replicas: 1
   selector: 
     matchLabels:
-      tier: mysql
       app: bd
+      tier: mysql
       project: expense
   template: 
     metadata:
       labels:
-        tier: mysql
         app: bd
+        tier: mysql
         project: expense
     spec:
       containers:
@@ -32,9 +32,9 @@ metadata:
   namespace: expense
 spec:
   selector:
-    tier: mysql
-    app: bd
-    project: expense
+     app: bd
+     tier: mysql
+     project: expense
   ports:
    - name: mysql-port
      protocol: TCP
