@@ -30,16 +30,14 @@ spec:
        project: expense
     spec:
       containers:
-      - name: backend
+      - name: frontend
         image: raidi/backend:v1
-        envFrom: 
-        - configMapRef:
-            name: backend
+        
 ---
 apiVersion : v1
 kind: Service
 metadata:
-  name: backend
+  name: frontend
   namespace: expese
 spec:
   type: LoadBalancer
