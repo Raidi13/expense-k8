@@ -18,8 +18,8 @@ spec:
     metadata:
       labels:
         app: mysql
-     tier: db
-     project: expense
+        tier: db
+        project: expense
     spec:
       containers:
       - name: mysql
