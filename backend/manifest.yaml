@@ -35,6 +35,7 @@ spec:
       containers:
       - name: backend
         image: joidevops/backend:v1
+        imagepullPolicy: Always
         resources:
           requests:
             cpu: 100m
