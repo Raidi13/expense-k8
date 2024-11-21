@@ -42,7 +42,7 @@ spec:
             memory: 128Mi
         envFrom:
         - configMapRef:
-          name: backend
+            name: backend
 ---
 kind: Service
 apiVersion: v1
