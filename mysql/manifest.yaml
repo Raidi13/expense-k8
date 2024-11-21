@@ -4,22 +4,22 @@ metadata:
   name: mysql
   namespace: expense # if namespace was not provided it will take the default namespace.
   labels: # these are the replicaset lables.
-     app: bd
-     tier: mysql
+     app: mysql
+     tier: db
      project: expense
 spec:
   replicas: 1
   selector: 
     matchLabels:
-      app: bd
-      tier: mysql
-      project: expense
+     app: mysql
+     tier: db
+     project: expense
   template: 
     metadata:
       labels:
-        app: bd
-        tier: mysql
-        project: expense
+        app: mysql
+     tier: db
+     project: expense
     spec:
       containers:
       - name: mysql
