@@ -47,8 +47,8 @@ spec:
   ports:
   - name: frontend-port
     protocol: TCP
-    port: 80 # service port
-    targetPort: 81 # container port
+    port: 8080 # service port
+    targetPort: 880 # container port
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
