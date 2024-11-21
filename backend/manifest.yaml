@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: joidevops/backend:v1
+        image: hemanthkumar75/backend:v1
         imagePullPolicy: Always
         resources:
           requests:
