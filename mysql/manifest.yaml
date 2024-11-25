@@ -27,8 +27,8 @@ spec:
         readinessProbe: # checks the container is ready or not.
           tcpSocket:
             port: 3306
-        initialDelaySeconds: 15
-        periodSeconds: 10
+         initialDelaySeconds: 15
+         periodSeconds: 10
        livenessProbe:
         tcpSocket:
           port: 3306
