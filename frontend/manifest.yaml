@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: raidi/frontend:v2
+        image: raidi/frontend:v1
         resources:
           requests:
             cpu: 100m
@@ -47,9 +47,10 @@ spec:
   ports:
   - name: frontend-port
     protocol: TCP
-    port: 8080 # service port
-    targetPort: 880 # container port
+    port: 80 # service port
+    targetPort: 80 # container port
 ---
+#Hpa-auto-scaller
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
