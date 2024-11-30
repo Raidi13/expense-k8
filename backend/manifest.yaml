@@ -29,7 +29,7 @@ spec:
         tier: api
         project: expense
     spec:
-      initContainers:
+      # initContainers:
       # - name: mysql-check
       #   image: busybox:1.28
       #   command: ['sh', '-c', "until nslookup mysql; do echo waiting for myservice; sleep 2; done"]
@@ -47,18 +47,18 @@ spec:
         envFrom:
         - configMapRef:
             name: backend
-        readinessProbe:
-          tcpSocket:
-            port: 8080
-          initialDelaySeconds: 15
-          periodSeconds: 10
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8080
-          initialDelaySeconds: 3
-          periodSeconds: 3
----
+#         readinessProbe:
+#           tcpSocket:
+#             port: 8080
+#           initialDelaySeconds: 15
+#           periodSeconds: 10
+#         livenessProbe:
+#           httpGet:
+#             path: /health
+#             port: 8080
+#           initialDelaySeconds: 3
+#           periodSeconds: 3
+ ---
 kind: Service
 apiVersion: v1
 metadata:
