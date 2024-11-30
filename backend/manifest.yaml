@@ -48,8 +48,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: backend
-          # ports:
-          #   - containerPort: 8080
 ---
 kind: Service
 apiVersion: v1

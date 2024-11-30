@@ -24,16 +24,6 @@ spec:
       containers:
       - name: mysql
         image: raidi/mysql:v1
-        readinessProbe: # checks the container is ready or not.
-          tcpSocket:
-            port: 3306
-          initialDelaySeconds: 15
-          periodSeconds: 10
-        livenessProbe:
-         tcpSocket:
-           port: 3306
-         initialDelaySeconds: 15
-         periodSeconds: 10
 ---
 apiVersion : v1
 kind: Service
@@ -42,9 +32,10 @@ metadata:
   namespace: expense
 spec:
   selector:
-     app: bd
-     tier: mysql
+     app: mysql
+     tier: db
      project: expense
+    
   ports:
    - name: mysql-port
      protocol: TCP
