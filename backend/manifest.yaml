@@ -3,9 +3,9 @@ kind: ConfigMap
 metadata:
   name: backend
   namespace: expense
-  labels:
-   app: backend
- data:
+  # labels:
+  #  app: backend
+data:
   DB_HOST: mysql
 
 ---
