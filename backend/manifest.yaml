@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: raidi/backend:v1
+          image: hemanthkumar75/backend:v1
           imagePullPolicy: Always
           envFrom:
             - configMapRef:
