@@ -118,7 +118,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: raidi/frontend:v1
+        image: raidi/frontend:v2
         resources:
           requests:
             cpu: 100m
