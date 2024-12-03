@@ -46,8 +46,20 @@ spec:
               cpu: 100m
               memory: 120Mi
           envFrom:
-            - configMapRef:
-                name: backend
+          - configMapRef:
+              name: backend
+            # health check
+            readinessProbe:
+              tcpSocket:
+                port: 8080
+              initialDelaySeconds: 15
+              periodSeconds: 10
+            livenessProbe:
+              httpGet:
+                path: /health
+                port: 8080
+              initialDelaySeconds: 3
+              periodSeconds: 3 
 ---
 kind: Service
 apiVersion: v1
