@@ -34,6 +34,7 @@ spec:
         created_by: raidi
         module: backend
     spec:
+    #initcontainers 
       initContainers:
       - name: mysql-check
         image: busybox:1.28
